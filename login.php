@@ -1,3 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<?php include "./header.shtml" ?>
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+Login
+<form action="/login.php" method="post" id="login" class="forms">
+    <input type="text" name="username" placeholder="Username">
+    <input type="password" name="password">
+    <input type="submit" value="Submit">
+    <div id="loginres"></div>
+</form>
+</body>
+</html>
+
 <?php
 $db_host = "localhost";
 $db_user = "server";

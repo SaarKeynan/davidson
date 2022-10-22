@@ -1,3 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="style.css">
+<?php include "./header.shtml" ?>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Sign Up
+<form action="/signup.php" method="post" id="signup" class="forms">
+    <input type="text" name="username" minlength="3" placeholder="Username">
+    <input type="password" minlength="5" name="password">
+    <input type="submit" value="Submit">
+    <div id="signupres"></div>
+</form>
+</body>
+</html>
+
 <?php
 
 $db_host = "localhost";
