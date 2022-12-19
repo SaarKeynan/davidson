@@ -10,9 +10,12 @@ if($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-function prepared_query($mysqli, $query, $params, $types = ""): mysqli_stmt {
+$GLOBALS["conn"] = $conn;
+
+function prepared_query($query, $params, $types = ""): mysqli_stmt {
+    global $conn;
     $types = $types ?: str_repeat("s", count($params));
-    $stmt = $mysqli->prepare($query);
+    $stmt = $conn->prepare($query);
     $stmt->bind_param($types, ...$params);
     $stmt->execute();
     return $stmt;
