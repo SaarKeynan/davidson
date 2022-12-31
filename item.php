@@ -10,12 +10,19 @@ require_once "db.php";
 </head>
 <body>
 <?php
-
-if(!isset($_GET["id"])):
+    if(!isset($_GET["id"])) {
         echo "Invalid Item!";
-    else: ?>
-    <?php var_dump(getDetails($_GET["id"])); ?>
-<?php endif; ?>
+        return;
+    }
+    $details = getDetails($_GET["id"]);
+    if($details === []) {
+        echo "No such item.";
+        return;
+    }
+?>
+    <div>
+
+    </div>
 </body>
 </html>
 

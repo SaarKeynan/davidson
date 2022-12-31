@@ -24,7 +24,7 @@ Sign Up
  */
 include 'db.php';
 
-if(isset($_POST["username"]) && isset($_POST["password"])) {
+function validateParams($username, $password) {
     if(strlen($_POST["username"]) < 3) {
         echo "Username too short";
         exit();
@@ -37,6 +37,10 @@ if(isset($_POST["username"]) && isset($_POST["password"])) {
         echo "Password too short";
         exit();
     }
+}
+
+if(isset($_POST["username"]) && isset($_POST["password"])) {
+    validateParams($_POST["username"], $_POST["password"]);
     $username = $_POST["username"];
     $password = $_POST["password"];
     $stmt = $conn->prepare("SELECT COUNT(*) FROM `users` WHERE username = ?");

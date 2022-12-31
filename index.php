@@ -16,7 +16,7 @@ require_once "db.php";
                     <a href="./item.php?id=<?php echo $card["id"] ?>">
                         <div class="card">
                             <div class="card-photo">
-                                <img src="<?php echo "/images/" . $card["img"] ?>" alt="">
+                                <img src="<?php echo $card["img"] ?>" alt="">
                             </div>
                             <div class="card-title">
                                 <?php echo $card["title"] ?>
